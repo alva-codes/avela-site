@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+$beatriceLight: fontSrc('Beatrice/Beatrice-Light');
+$beatriceRegular: fontSrc('Beatrice/Beatrice-Regular');
+$beatriceSemiBold: fontSrc('Beatrice/Beatrice-SemiBold');
+
+@at-root {
+	@include font-face('Beatrice', $beatriceLight, 300);
+	@include font-face('Beatrice', $beatriceRegular, 400);
+	@include font-face('Beatrice', $beatriceSemiBold, 600);
+}

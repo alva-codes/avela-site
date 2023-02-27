@@ -1,0 +1,118 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+$ns: '.button';
+
+#{$ns} {
+	position: relative;
+	width: auto;
+	font-weight: 400;
+	overflow: hidden;
+	border-radius: 80px;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	z-index: 1;
+
+	div {
+		font-size: inherit;
+		letter-spacing: inherit;
+		display: flex;
+		align-items: center;
+		color: #fff;
+		justify-content: center;
+	}
+	&--small {
+		div {
+			font-size: 1.4rem;
+			letter-spacing: -0.01em;
+			height: 5rem;
+			padding: 0 6rem;
+			@screen md {
+				font-size: 1.24rem;
+				letter-spacing: 0.02em;
+				height: 4.2rem;
+				padding: 0 2rem;
+			}
+		}
+	}
+	&--medium {
+		div {
+			font-size: 2rem;
+			letter-spacing: -0.01em;
+			height: 5rem;
+			padding: 0 8rem;
+			@screen md {
+				font-size: 2rem;
+				height: 5rem;
+				padding: 0 2rem;
+			}
+		}
+	}
+	&--large {
+		div {
+			font-size: 3.6rem;
+			letter-spacing: -0.01em;
+			height: 7rem;
+			padding: 0 4rem;
+			@screen md {
+				padding: 0 4.4rem;
+			}
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		border: 2px solid theme('colors.primaryRed');
+		border-radius: 80px;
+		overflow: hidden;
+	}
+
+	&::after {
+		content: '';
+		background: theme('colors.primaryRed');
+		position: absolute;
+		width: 150%;
+		height: 200%;
+		border-radius: 50%;
+		top: -50%;
+		left: -25%;
+		transform: translate(0px, -75%);
+		z-index: -1;
+		overflow: hidden;
+	}
+	&--revert {
+		&::after {
+			animation: EFFECT2 400ms ease forwards;
+		}
+	}
+
+	&--animate {
+		&::after {
+			animation: EFFECT 400ms ease forwards;
+		}
+	}
+
+	@keyframes EFFECT {
+		from {
+			transform: translate(0px, 175%);
+		}
+		to {
+			transform: translate(0px, 0%);
+		}
+	}
+	@keyframes EFFECT2 {
+		from {
+			transform: translate(0px, 0%);
+		}
+		to {
+			transform: translate(0px, -75%);
+		}
+	}
+}

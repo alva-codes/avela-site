@@ -1,0 +1,144 @@
+$ns: '.ReactModalPortal';
+#{$ns} {
+	.ReactModal__Overlay{
+		background-color: rgb(19, 18, 18,  0.75) !important;
+	    z-index: 999 !important;
+	}
+}
+.custom-modal.ReactModal__Content {
+	width: 100%;
+    max-width: 760px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(https://wp.avelaup.com/wp-content/uploads/2023/02/bg-signup-popup.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding: 115px 110px 70px;
+    border: none !important;
+    @media only screen and (max-width: 1400px) {
+  	    padding: 90px 30px 70px;
+	}
+    @media only screen and (max-width: 530px) {
+	  	padding: 115px 20px 70px;
+	}
+    &:focus-visible{
+    	outline: none !important;
+    }
+    h2{
+	    font-family: 'Beatrice';
+	    font-style: normal;
+	    font-weight: 700;
+	    font-size: 38px;
+	    line-height: 49px;
+	    text-align: center;
+	    color: #000000;
+	    margin-bottom: 10px;
+    }
+    h4{
+    	font-family: 'Beatrice';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 25px;
+		line-height: 32px;
+		text-align: center;
+		color: #000000;
+		margin-bottom: 20px;
+    }
+    .sign-up-form-popup{
+	    flex-direction: column;
+	    align-items: center;
+        max-width: 490px;
+    	margin: auto;
+	    .first-last-name{
+	    	width: 100%;
+		    display: flex;
+		    margin-bottom: 25px;
+		    input{
+	    	    margin: auto 10px;
+		    }
+	    }
+    	input{
+    		border-radius: 25px;
+    		border: 2px solid #000;
+    		font-family: 'Beatrice';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 30px;
+			text-align: center;
+			color: #000000;
+		    width: 100%;
+	        padding: 10px;
+	        &::placeholder{
+	        	font-family: 'Beatrice';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 30px;
+				text-align: center;
+				color: #000000;
+	        }
+    	}
+    	input[type="email"]{
+    		max-width: 290px;
+    		margin: auto 10px;
+    	}
+    	button#submit-signup-form{
+		    background: #ff1415;
+		    margin-top: 25px;
+		    div{
+		    	font-family: Beatrice;
+			    font-size: 16px;
+			    font-style: normal;
+			    font-weight: 400;
+			    line-height: 30px;
+			    text-align: center;
+		    }
+    	}
+    	p{
+		    color: #fe1315;
+		    font-family: Beatrice;
+		    font-size: 20px;
+		    font-style: normal;
+		    font-weight: 500;
+		    line-height: 32px;
+		    margin-bottom: 20px;
+		    text-align: center;
+    	}
+    }
+    .close-popup{
+	    position: absolute;
+	    height: 25px;
+	    width: 25px;
+	    right: 15px;
+	    top: 15px;
+	    padding: 0;
+	    background: transparent;
+    	&:before{
+		    content: "";
+		    height: 25px;
+		    width: 1px;
+		    display: block;
+		    background: #000;
+		    transform: rotate(45deg);
+		    position: absolute;
+		    top: 0;
+		    right: 50%;
+    	}
+    	&:after{
+		    content: "";
+		    height: 25px;
+		    width: 1px;
+		    display: block;
+		    background: #000;
+		    transform: rotate(-45deg);
+		    position: absolute;
+		    top: 0;
+		    right: 50%;
+    	}
+    }
+}

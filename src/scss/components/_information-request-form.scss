@@ -1,0 +1,111 @@
+$ns: '.information-request-form';
+
+#{$ns} {
+	&__input {
+		display: block;
+		background-color: theme('colors.black');
+		border: 1px solid theme('colors.stroke');
+		border-radius: 4rem;
+		padding: 1.5rem 4rem;
+		color: rgba(2555, 255, 255, 0.7);
+		transition: border 250ms ease;
+
+		&--active {
+			color: theme('colors.white');
+		}
+
+		&--select {
+			padding: 1.5rem 8rem 1.5rem 4rem;
+			text-overflow: ellipsis;
+			cursor: pointer;
+			appearance: none;
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9.88047 1.29006-3.88 3.88-3.88-3.88c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59003-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42003 0Z' fill='%23fff'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 40px center;
+			opacity: 0.5;
+			@screen md {
+				opacity: 0.7;
+			}
+
+			@include on-event {
+				outline: none;
+			}
+
+			&::placeholder {
+				color: theme('colors.white');
+				opacity: 0.7;
+			}
+
+			&:focus {
+				background: url("data:image/svg+xml,%3Csvg width='12' height='8' fill='none' style='transform: rotate(-180deg)' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m9.88047 1.29006-3.88 3.88-3.88-3.88c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59003-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42003 0Z' fill='%23fff'/%3E%3C/svg%3E")
+						no-repeat right 40px center,
+					linear-gradient(
+						235.87deg,
+						rgba(255, 20, 21, 0.08) 25.54%,
+						rgba(46, 53, 62, 0.08) 44.55%
+					),
+					#272b31;
+			}
+			&.has-text {
+				border-color: theme('colors.stroke');
+				opacity: 0.7;
+			}
+
+			&.error {
+				color: $red;
+				border-color: $red;
+			}
+		}
+
+		&--file {
+			padding: 15px 10px;
+			cursor: pointer;
+
+			&:hover {
+				background: linear-gradient(
+						235.87deg,
+						rgba(255, 20, 21, 0.08) 25.54%,
+						rgba(46, 53, 62, 0.08) 44.55%
+					),
+					#272b31;
+			}
+		}
+	}
+
+	&__radioButton {
+		border-radius: 50%;
+		margin-top: 0.2em;
+		appearance: none;
+		height: 24px;
+		width: 24px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #634a52;
+
+		&::before {
+			content: '';
+			display: block;
+			border-radius: 50%;
+			height: 14px;
+			width: 14px;
+			transition: background-color 0.3s ease;
+		}
+
+		&:checked {
+			&::before {
+				@apply bg-white;
+			}
+		}
+	}
+
+	&__legal {
+		p {
+			margin-bottom: 20px;
+		}
+
+		a {
+			font-weight: 600;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+$ns: '.citation';
+
+#{$ns} {
+	position: relative;
+	background: #fff;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 2rem;
+		right: 2rem;
+		height: 1px;
+		background: #e9e9e9;
+		display: inline-block;
+		@screen md {
+			left: 0;
+			right: 0;
+		}
+	}
+	svg {
+		width: 2.5rem;
+		transform: translateX(-50%);
+		@screen md {
+			transform: translateX(0);
+			width: 5rem;
+		}
+	}
+	.headline {
+		font-size: 2.4rem;
+		line-height: 3.566rem;
+	}
+	.html {
+		p:not(:last-of-type) {
+			padding-bottom: 4rem;
+			@screen md {
+				padding-bottom: 5.5rem;
+			}
+		}
+	}
+	a {
+		text-decoration: underline;
+	}
+}

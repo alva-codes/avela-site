@@ -1,0 +1,79 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the input component.
+// -----------------------------------------------------------------------------
+
+$ns: '.input';
+
+#{$ns} {
+	&--text,
+	&--email,
+	&--search,
+	&--password,
+	&--tel {
+		display: block;
+		width: 100%;
+		background-color: theme('colors.black');
+		border: 1px solid theme('colors.stroke');
+		border-radius: 40px;
+		padding: 15px 40px;
+		color: theme('colors.white');
+		transition: border 250ms ease;
+		opacity: 0.5;
+		@screen md {
+			opacity: 0.7;
+		}
+
+		@include on-event {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: theme('colors.white');
+			opacity: 0.7;
+		}
+
+		&:focus {
+			background: linear-gradient(
+					235.87deg,
+					rgba(255, 20, 21, 0.08) 25.54%,
+					rgba(46, 53, 62, 0.08) 44.55%
+				),
+				#272b31;
+		}
+		&.has-text {
+			border-color: theme('colors.stroke');
+			opacity: 0.7;
+		}
+
+		&.error {
+			color: $red;
+			border-color: $red;
+		}
+	}
+
+	&--checkbox {
+		border-radius: 50%;
+		appearance: none;
+		height: 24px;
+		width: 24px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #634a52;
+
+		&::before {
+			content: '';
+			display: block;
+			border-radius: 50%;
+			height: 14px;
+			width: 14px;
+			transition: background-color 0.3s ease;
+		}
+
+		&:checked {
+			&::before {
+				@apply bg-white;
+			}
+		}
+	}
+}

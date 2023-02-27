@@ -1,0 +1,46 @@
+$ns: '.team-slider';
+
+#{$ns} {
+	background: white;
+	color: black;
+
+	.team-player-card {
+		.image-and-icon-wrapper {
+			@screen lg {
+				max-width: 33rem;
+			}
+		}
+		.team-player-image {
+			z-index: 5;
+			@include aspect-ratio-media(310, 372);
+
+			@screen lg {
+				@include aspect-ratio-media(330, 390);
+			}
+		}
+
+		.image-copy-wrapper {
+			@screen lg {
+				width: 84rem;
+			}
+		}
+
+		.linkedin-logo-wrapper {
+			position: relative;
+			z-index: 10;
+			display: flex;
+			justify-content: center;
+			margin-top: -2.5rem;
+			svg {
+				position: relative;
+			
+				width: 5rem;
+				height: 5rem;
+				@screen lg {
+					width: 9rem;
+					height: 9rem;
+				}
+			}
+		}
+	}
+}

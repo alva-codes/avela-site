@@ -1,0 +1,62 @@
+// -- CopyMe -- //
+
+$ns: '.hero-grid';
+
+#{$ns} {
+	height: 125vh;
+	overflow: hidden;
+
+	@screen xxl {
+		height: 120vh;
+	}
+
+	&__background {
+		width: 615%;
+    transform: rotate(-22deg) translate(-29.75%, -18.5%);
+
+		@screen sm {
+			width: 271vmax;
+			transform: rotate(-22deg) translate(-30%, -21%);
+		}
+
+		@screen lg {
+			width: 265vmax;
+			transform: rotate(-22deg) translate(-9%, -20%);
+		}
+
+		@screen xl {
+			width: 220vmax;
+			transform: rotate(-22deg) translate(3%, -21.5%);
+		}
+
+		@screen xxl {
+			width: 237vmax;
+			transform: rotate(-22deg) translate(3%, -20.5%);
+		}
+
+		.grid {
+			transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+			& + .grid {
+				@apply mt-50 lg:mt-80;
+			}
+		}
+	}
+	&__content {
+		p {
+			width: 22rem;
+			@screen md {
+				width: auto;
+			}
+		}
+		.subsubline {
+			@apply font-beatrice mx-auto;
+			font-weight: 400;
+			font-size: 1.2rem;
+			line-height: 2.4rem;
+			letter-spacing: 0.02em;
+			padding-top: 0.8rem;
+			opacity: .75;
+			width: 100%;
+		}
+	}
+}

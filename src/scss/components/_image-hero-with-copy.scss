@@ -1,0 +1,41 @@
+$ns: '.image-hero-with-copy';
+
+#{$ns} {
+	&__logo {
+		width: calc(100% - 4.5rem);
+		top: calc(50vh - 12rem);
+		@apply left-30;
+		@screen md {
+			width: 50%;
+			left: 50%;
+			--tw-translate-x: -50%;
+			max-width: 33rem;
+		}
+		@screen lg {
+			top: calc(50vh);
+		}
+	}
+
+	&__by {
+		top: calc(50vh);
+		@screen lg {
+			top: calc(50vh + 13rem);
+		}
+	}
+
+	&__portrait {
+		// 5/9 columns + 30px padding left - 7.5px grid gutter?
+		width: calc(47% + 2.35rem);
+		@screen lg {
+			width: unset;
+		}
+	}
+
+	&__copy {
+		strong {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+		}
+	}
+}

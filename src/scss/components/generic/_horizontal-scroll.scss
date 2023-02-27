@@ -1,0 +1,23 @@
+$ns: '.generic-horizontal-scroll';
+
+#{$ns} {
+	&__track {
+		pointer-events: none;
+		transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+		> * {
+			flex: 0 0 100vw;
+			@apply transition duration-500;
+			@screen lg {
+				flex: 0 0 calc(48vw + 130px);
+			}
+		}
+	}
+
+	&__fixed > * {
+		width: 100vw;
+		@apply transition duration-500;
+		@screen lg {
+			width: calc(48vw + 130px);
+		}
+	}
+}

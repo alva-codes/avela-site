@@ -1,0 +1,265 @@
+/**
+ * Basic typography style for copy text
+ */
+
+html {
+	font-size: 10px;
+}
+
+body {
+	@apply font-beatrice bg-black text-white;
+}
+
+.typo-h1 {
+	font-size: 7rem;
+	line-height: 1.25;
+	letter-spacing: -0.03em;
+	font-weight: 400;
+	@screen md {
+		font-size: 8rem;
+	}
+}
+
+.typo-sh1 {
+	font-size: 7rem;
+	line-height: 1.25;
+	letter-spacing: -0.03em;
+	font-weight: 400;
+	@screen md {
+		font-size: 3.6rem;
+		line-height: 5.4rem;
+		letter-spacing: -0.01em;
+	}
+}
+
+.typo-h2 {
+	font-size: 5rem;
+	line-height: 6rem;
+	letter-spacing: -0.03em;
+	font-weight: 400;
+	@screen md {
+		font-size: 6rem;
+		line-height: 7.2rem;
+	}
+}
+
+.typo-sh2 {
+	font-size: 1.5rem;
+	line-height: 3rem;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+	@screen md {
+		font-size: 2.4rem;
+		line-height: 3.6rem;
+		letter-spacing: -0.01em;
+	}
+}
+
+.typo-subhead-01 {
+	font-size: 3.6rem;
+	line-height: 5.3rem;
+	letter-spacing: -0.03em;
+	font-weight: 400;
+	@screen md {
+		font-size: 3.6rem;
+		line-height: 5.4rem;
+	}
+}
+
+.typo-subhead-02 {
+	font-size: 2.4rem;
+	line-height: 3.6rem;
+	letter-spacing: -0.01em;
+	font-weight: 400;
+}
+
+.typo-subhead-03 {
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 2.4rem;
+}
+
+.typo-subhead-04 {
+	font-size: 2.4rem;
+	line-height: 3.6rem;
+	letter-spacing: 0.02em;
+	font-weight: 600;
+}
+
+.typo-medium-body-semibold {
+	font-size: 1.5rem;
+	line-height: 3rem;
+	letter-spacing: 0.02em;
+	font-weight: 600;
+}
+
+.typo-medium-body-regular {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+}
+
+.typo-medium-body-regular-03 {
+	font-size: 1.5rem;
+	line-height: 2;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+}
+
+.typo-medium-body-light {
+	font-size: 1.5rem;
+	line-height: 3rem;
+	letter-spacing: 0.02em;
+	font-weight: 300;
+}
+
+.typo-small-body-regular {
+	font-size: 1.2rem;
+	line-height: 2.4rem;
+	letter-spacing: 0.02em;
+	font-weight: 400;
+}
+
+.typo-small-body-light {
+	font-size: 1.2rem;
+	line-height: 2.4rem;
+	letter-spacing: 0.02em;
+	font-weight: 300;
+}
+
+.typo-eyebrow {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-weight: 300;
+	@screen md {
+		font-size: 2.4rem;
+		line-height: 3.566rem;
+	}
+}
+
+.typo-formfield {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-weight: 400;
+	@screen md {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+}
+
+.typo-buttontext {
+	font-size: 1.2rem;
+	line-height: 1.783rem;
+	letter-spacing: 0.02rem;
+	font-weight: 400;
+}
+
+.typo-legal-copy {
+	font-size: 1.2rem;
+	line-height: 2.4rem;
+	font-weight: 400;
+	letter-spacing: 0.02rem;
+}
+
+.typo-nav-open-close {
+	font-size: 1.2rem;
+	line-height: 1.44rem;
+	font-weight: 400;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+}
+
+.typo-nav-links {
+	font-size: 1.4rem;
+	line-height: 2.08rem;
+	font-weight: 600;
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+	@screen md {
+		font-size: 1.2rem;
+		line-height: 1.783rem;
+	}
+}
+
+.typo-horizontal-slider-heading {
+	font-size: 3rem;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	font-weight: 300;
+	@screen xl {
+		font-size: 6rem;
+	}
+}
+
+.typo-horizontal-slider-paragraph {
+	font-size: 3rem;
+	font-weight: 300;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+
+	@screen md {
+		@apply typo-h2;
+		font-weight: 300;
+	}
+}
+
+.typo-horizontal-slider-number {
+	font-size: 15rem;
+	line-height: 1.2;
+	letter-spacing: -0.03em;
+	@screen md {
+		font-size: 20rem;
+	}
+	mark {
+		font-size: 0.33em;
+		padding: 0.25em;
+		vertical-align: middle;
+	}
+}
+
+.sub-headline-request-sample{
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 32px;
+	text-align: center;
+	color: #FFFFFF;
+	max-width: 700px;
+	margin: auto;
+}
+
+.sub-thank-you-request-sample{
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 32px;
+	text-align: left;
+	color: #FFFFFF;
+	max-width: 900px;
+	a{
+		color: #B2B2B2;
+	}
+}
+
+.avelaup-icon-twitter{
+	width: 24px;
+	display: inline-block !important;
+	margin-bottom: 2px;
+}
+
+.avelaup-icon-instagram{
+	width: 24px;
+	display: inline-block !important;
+	margin-left: 15px;
+}
+
+.avelaup-icon-linkedin{
+	width: 24px;
+	display: inline-block !important;
+	margin-left: 15px;
+	margin-bottom: 4px;
+}
+
+
+

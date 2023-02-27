@@ -1,0 +1,32 @@
+$ns: '.statement';
+
+#{$ns} {
+  background: #fff;
+
+  .image {
+    @include aspect-ratio-media(1, 1);
+  }
+
+  div {
+    .custom-statement {
+
+      @apply typo-subhead-02;
+      text-align: center;
+      p {
+        color: black;
+        > span {
+          text-decoration: underline red !important;
+        }
+
+      }
+
+      @screen md {
+        max-width: 63rem;
+      }
+    }
+  }
+
+
+
+
+}

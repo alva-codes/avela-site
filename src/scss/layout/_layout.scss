@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the layout of the site/application.
+// -----------------------------------------------------------------------------
+
+$ns: '.layout';
+
+#{$ns} {
+	overflow: hidden;
+
+	main {
+		min-height: 70vh;
+		// background-color: $charcoal-grey;
+	}
+
+	&-default__footer {
+		// clear: both;
+	}
+
+	// Overwrite to allow position sticky
+
+	.tl-edges {
+		overflow-x: visible;
+
+		&:after {
+			content: '';
+			clear: both;
+			display: table;
+		}
+	}
+
+	//Page Newletter Info Page
+	.page-flexible-newsletter-info-page{
+		.page-flexible__components{
+			.wysiwyg{
+				.container{
+					padding-bottom: 10rem !important;
+					.section{
+						padding-bottom: 5rem !important;
+					}
+				}
+			}
+		}
+	}
+
+}

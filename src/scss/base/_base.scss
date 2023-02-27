@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles / Ree
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+
+// start reset
+
+html {
+	box-sizing: border-box;
+	// scroll-behavior: smooth;
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+figure {
+	margin: 0;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+ol,
+dd {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+p {
+	margin: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+fieldset {
+	border-width: 0;
+	padding: 0;
+	margin: 0;
+}
+
+// end reset
+
+a {
+	color: theme('colors.black');
+	text-decoration: underline;
+	cursor: pointer;
+	transition: color 250ms ease;
+
+	@include on-hover {
+		// opacity: .75;
+	}
+}
+
+label {
+	color: theme('colors.black');
+	font-size: 1.5rem;
+	line-height: 2.4rem;
+
+	&[required] {
+		&:before {
+			content: '*';
+			padding-right: 3px;
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	height: inherit;
+}
+
+mark {
+	background-color: unset;
+	color: inherit;
+}
+
+.devGrid {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 9999;
+	.col {
+		background-color: rebeccapurple;
+		opacity: 0.1;
+		min-height: 100vh;
+	}
+}
+
+.scroll-margin-top {
+	scroll-margin-top: 50px;
+	@screen md {
+		scroll-margin-top: 150px;
+	}
+
+}

@@ -1,0 +1,185 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// Event wrapper
+// @author Harry Roberts
+// @param {Bool} $self [false] - Whether or not to include current selector
+// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+
+@mixin on-event($self: false) {
+	/* stylelint-disable */
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	} @else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+	/* stylelint-enable */
+}
+
+// Make a context based selector a little more friendly
+// @author Hugo Giraudel
+// @param {String} $context
+
+@mixin when-inside($context) {
+	#{$context} & {
+		@content;
+	}
+}
+
+// add hover effect to devices that
+// can be hovered (not touch devcies)
+
+@mixin on-hover() {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+// Remove scrollbars
+
+@mixin remove-scrollbars() {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+// for use with image snippet, but can also be used by adding data-media
+// attribute to media asset and applying mixin to its container
+
+@mixin aspect-ratio-media($width, $height) {
+	aspect-ratio: calc($width / $height);
+
+	@supports not (aspect-ratio: 16 / 9) {
+		position: relative;
+		width: 100%;
+		&:before {
+			display: block;
+			content: '';
+			width: 100%;
+			padding-bottom: calc($height / $width) * 100%;
+		}
+		> div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+		[data-media] {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			// TODO: remove this if we do not need browser support
+			// font-family: 'object-fit: cover;';
+		}
+	}
+}
+
+// truncates text after n lines
+
+@mixin truncate-text($lines: 3) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+	overflow: hidden;
+}
+
+/* ============================================================================
+ * Form
+*/
+
+@mixin placeholder($color, $opacity: 0.4) {
+	&::-webkit-input-placeholder {
+		/* WebKit browsers */
+		color: $color;
+		opacity: $opacity;
+	}
+
+	&:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: $color;
+		opacity: $opacity;
+	}
+
+	&::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: $color;
+		opacity: $opacity;
+	}
+
+	&:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		color: $color;
+		opacity: $opacity;
+	}
+}
+
+/* ============================================================================
+ * Font
+*/
+
+// Include required file types for custom webfont rendering.
+
+@mixin font-face($family, $src, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.woff') format('woff'),
+			url('#{$src}.otf') format('opentype');
+		font-style: $style;
+		font-weight: $weight;
+		// font-display: swap;
+	}
+}
+
+/*
+ * base mixin for "Button" styles
+ *
+*/
+
+@mixin base-button-style() {
+	display: inline-block;
+	font-family: $text-font-stack;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	font-weight: 500;
+	height: 47px;
+	min-width: 108px;
+	border-radius: 8px;
+	padding: 17px 28px;
+	text-align: center;
+	color: theme('colors.white');
+	background-color: theme('colors.black');
+	transition-property: all;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+	text-decoration: none;
+
+	@include on-hover {
+		outline: none;
+		background-color: theme('colors.black');
+		color: theme('colors.white');
+	}
+
+	&[disabled],
+	&[disabled='disabled'] {
+		cursor: no-drop; // stylelint-disable-line
+	}
+}

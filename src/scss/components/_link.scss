@@ -1,0 +1,34 @@
+$ns: '.custom-link';
+
+#{$ns} {
+	background:linear-gradient(235.87deg, theme('colors.gradientRed') 25.54%, theme('colors.gradientBlack') 44.55%), #272B31;
+	height: 100vh;
+	max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	.wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-left: 3rem;
+		margin-right:  3rem;
+		flex-direction: column;
+		margin-top: -1rem;
+
+		@screen lg {
+			margin: 0;
+			flex-direction: row;
+		}
+		div {
+			color: #fff;
+			flex-shrink: 0;
+			text-align: center;
+			white-space: pre;
+			@screen lg {
+				width: inherit;
+			}
+		}
+	}
+}

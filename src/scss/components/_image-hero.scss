@@ -1,0 +1,22 @@
+$ns: '.image-hero';
+
+#{$ns} {
+	.gatsby-image-wrapper {
+		@include aspect-ratio-media(330, 425);
+
+		&:nth-of-type(2) {
+			@include aspect-ratio-media(355, 430);
+
+			@media screen and (min-width: 1439px) {
+				@include aspect-ratio-media(510, 655);
+			}
+		}
+	}
+	h1 {
+		font-weight: 300;
+		@screen lg {
+			max-width: 93rem;
+			margin: 0 auto;
+		}
+	}
+}

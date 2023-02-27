@@ -1,0 +1,154 @@
+$ns: '.overview';
+
+#{$ns} {
+	.container-grid-overview {
+		position: relative;
+	}
+
+	strong {
+		@apply font-semibold;
+		&:first-child:last-child {
+			@apply block mb-20;
+		}
+	}
+
+	&__middle {
+		&__headline {
+			@apply typo-sh1 -mr-4;
+			@screen md {
+				@apply typo-h2;
+			}
+		}
+		&__moving-words {
+			@apply typo-sh1;
+			@screen md {
+				@apply typo-h2;
+			}
+			will-change: transform;
+			// transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+
+			span {
+				display: inline-block;
+				will-change: transform;
+			}
+		}
+	}
+
+	.overview-headline {
+		@apply typo-subhead-02;
+
+		> mark {
+			color: white;
+			text-decoration: underline theme('colors.primaryRed');
+			background-color: black;
+		}
+	}
+
+	.avela-logo {
+		display: flex;
+		justify-content: center;
+		position: relative;
+
+		@screen lg {
+			justify-content: end;
+		}
+
+		> svg {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			&:first-of-type {
+				z-index: 0;
+			}
+			&:nth-child(2) {
+				z-index: 15;
+			}
+
+			@screen lg {
+				left: initial;
+				bottom: -8rem;
+				right: 0;
+			}
+		}
+	}
+
+	.image-label {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 0.9rem;
+		line-height: 1.3rem;
+		letter-spacing: 0.3em;
+	}
+
+	.card-overview-wrapper {
+		position: relative;
+		margin-top: -12rem;
+
+		background: linear-gradient(
+				235.87deg,
+				theme('colors.gradientRed') 25.54%,
+				theme('colors.gradientBlack') 44.55%
+			),
+			#272b31;
+		z-index: 10;
+
+		@screen lg {
+			position: relative;
+			left: 35rem;
+			margin-top: 0;
+			top: -10rem;
+			transform: translateX(100%);
+			transition: 700ms ease;
+			animation-delay: 700ms;
+
+			&.active-card {
+				transform: translateX(0%);
+			}
+		}
+	}
+
+	.image-wrapper-overview {
+		width: 213px;
+		height: 34px;
+	}
+
+	.items-wrapper {
+		display: flex;
+		flex-direction: column;
+
+		@screen lg {
+			flex-direction: row;
+		}
+	}
+
+	.item-wrapper {
+		@screen lg {
+			width: 220rem;
+		}
+	}
+
+	.item-header {
+		@apply typo-subhead-03;
+
+		@screen lg {
+			letter-spacing: 0 !important;
+			@apply typo-medium-body-regular;
+		}
+	}
+
+	.card-image-icon {
+		width: 8.3rem;
+		height: 8.3rem;
+		position: relative;
+		left: -3rem;
+		top: 2rem;
+		@include aspect-ratio-media(1, 1);
+
+		@screen md {
+			width: 9rem;
+			height: 9rem;
+		}
+	}
+}

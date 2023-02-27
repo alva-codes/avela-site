@@ -1,0 +1,26 @@
+.form-states {
+	.headline {
+		font-size: 3.6rem;
+		line-height: 4rem;
+		letter-spacing: 0.01rem;
+		font-weight: 400;
+		@screen lg {
+			@apply typo-h2;
+		}
+	}
+	.subline {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 400;
+		@screen lg {
+			font-size: 2rem;
+			line-height: 2.4em;
+		}
+	}
+	.submit-new {
+		font-size: 1.5rem;
+		line-height: 3rem;
+		letter-spacing: 0.02rem;
+		font-weight: 300;
+	}
+}

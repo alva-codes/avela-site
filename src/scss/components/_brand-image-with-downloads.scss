@@ -1,0 +1,94 @@
+$ns: '.brand-image-with-downloads';
+
+#{$ns} {
+	max-width: 100%;
+	background: white;
+	color: black;
+	@screen lg {
+		background: white;
+	}
+
+	.container {
+		position: relative;
+		background: linear-gradient(235.87deg, #ff141507 25.54%, #0000000a 44.55%),
+			#ffffff;
+
+		@screen lg {
+			bottom: 12rem;
+			z-index: 10;
+			left: 38rem;
+			width: calc(100vw - 38rem);
+			background: linear-gradient(235.87deg, #ff141507 25.54%, #0000000a 44.55%),
+				#ffffff;
+			margin: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.subheadline {
+			font-size: 2.4rem;
+			line-height: 3.6rem;
+			letter-spacing: -0.01em;
+			font-weight: 300;
+			@screen lg {
+				@screen md {
+					font-size: 3.6rem;
+					line-height: 5.4rem;
+					letter-spacing: -0.01em;
+				}
+			}
+		}
+	}
+
+	.content-max {
+		@screen lg {
+			max-width: 80rem;
+		}
+	}
+	.file-item {
+		padding-top: 2.5rem;
+		border-top: 2px solid #eeebec;
+		margin-bottom: 5.5rem;
+
+		&__icon {
+			svg {
+				width: 5.5rem;
+				height: auto;
+				@screen lg {
+					width: 3.875rem;
+				}
+			}
+		}
+
+		@screen lg {
+			&:not(:first-of-type) {
+				border-top: 2px solid #e7d6dc;
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.file-details {
+		display: flex;
+		width: 17rem;
+		justify-content: space-between;
+
+		@screen lg {
+			margin-right: 15.5rem;
+			width: 20rem;
+		}
+	}
+
+	h2 {
+		font-size: 3.6rem;
+		line-height: 4.3rem;
+		letter-spacing: -0.03rem;
+		font-weight: 300 !important;
+		@screen lg {
+			@apply typo-h2;
+		}
+	}
+}

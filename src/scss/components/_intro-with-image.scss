@@ -1,0 +1,10 @@
+$ns: '.intro-with-image';
+
+#{$ns} {
+	position: relative;
+	z-index: 2;
+
+	mark {
+		text-decoration: underline theme('colors.primaryRed');
+	}
+}

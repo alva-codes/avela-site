@@ -1,0 +1,51 @@
+$ns: '.intro-with-overview-card';
+
+#{$ns} {
+	&__headline {
+		span {
+			text-decoration-color: #ff1415 !important;
+		}
+	}
+
+	&__card {
+		background: linear-gradient(
+				235.87deg,
+				rgba(255, 20, 21, 0.08) 25.54%,
+				rgba(46, 53, 62, 0.08) 44.55%
+			),
+			#272b31;
+
+		&__copy {
+			p {
+				margin-bottom: 1.5rem;
+			}
+		}
+
+		&__line {
+			border-top: 1px solid #644d55;
+		}
+		
+	}
+	.linkSublabel {
+		@screen md {
+			max-width: 24rem;
+		}
+	}
+
+	.button {
+		width: 100%;
+		@screen md {
+			width: auto;
+		}
+
+		div {
+			padding: 0 3rem;
+			text-align: center;
+			width: 100%;
+			justify-content: center;
+			@screen md {
+				justify-content: flex-start;
+			}
+		}
+	}
+}

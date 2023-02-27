@@ -1,0 +1,79 @@
+$ns: '.brand-image';
+
+#{$ns} {
+	@screen lg {
+		margin-top: -25rem;
+	}
+	.img {
+		@include aspect-ratio-media(375, 812);
+		@screen md {
+			@include aspect-ratio-media(1440, 2400);
+		}
+		@screen lg {
+			@include aspect-ratio-media(1440, 1000);
+		}
+
+		width: auto;
+		max-width: none;
+		z-index: 1;
+		&--absolute {
+			position: absolute !important;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 3;
+		}
+
+		img {
+			object-position: bottom;
+		}
+	}
+	.circle {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+		svg {
+			width: 100%;
+			padding: 0 1rem;
+			height: auto;
+			transform: rotate(-256deg);
+			@screen md {
+				transform: translateY(10%) rotate(-256deg);
+				width: 80%;
+			}
+			@screen lg {
+				width: 42%;
+			}
+		}
+	}
+	&--v2 {
+		margin-top: 0;
+		.img {
+			@screen md {
+				@include aspect-ratio-media(1440, 2800);
+			}
+			@screen lg {
+				@include aspect-ratio-media(1440, 1200);
+			}
+		}
+		.circle {
+			svg {
+				transform: scale(1.5) translateX(-3%) translateY(-22%) rotate(-166deg);
+				width: 100%;
+				@screen md {
+					transform: scale(1.5) translateX(-5%) translateY(-23%) rotate(-166deg);
+				}
+				@screen lg {
+					margin-top: 0;
+					width: 55%;
+					transform: translateX(-28%) translateY(-24%) rotate(-166deg);
+				}
+			}
+		}
+	}
+}

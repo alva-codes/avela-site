@@ -1,0 +1,14 @@
+$ns: '.image-text';
+
+#{$ns} {
+  background: #fff;
+
+  .image {
+    @include aspect-ratio-media(335, 318);
+
+    @screen md {
+      @include aspect-ratio-media(690, 655);
+    }
+  }
+
+}

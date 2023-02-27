@@ -1,0 +1,154 @@
+$ns: '.accordion-main';
+
+#{$ns} {
+	background: #f6f6f6;
+	color: #000;
+	padding-top: 100px;
+    padding-bottom: 100px;
+	.accordion-container{
+	    max-width: 1200px;
+ 		margin: auto;
+	    padding: 0 30px;
+	}
+	.title-accordion{
+	    font-family: 'Beatrice';
+	    font-style: normal;
+	    font-weight: 400;
+	    font-size: 20px;
+	    line-height: 190%;
+	    letter-spacing: 0.2em;
+	    color: #000000;
+        padding-top: 10px;
+    	padding-bottom: 30px;
+	}
+	.accordion-header{
+	    width: 100%;
+	    margin: auto;
+	    background: #fff;
+	    padding: 20Px 40px;
+	    border-radius: 30px;
+	    cursor: pointer;
+        margin-bottom: 20px !important;
+        // transition: max-height 0.5s ease-in-out;
+	  	// overflow: hidden;
+	  	// max-height: 110px;
+	    .question-open{
+    	    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+	    }
+	}
+
+	.accordion-header.open:has(.accordion-answer){
+		&:last-child{
+	        padding-top: 30px;
+			padding-bottom: 30px;
+	  	}
+	}
+
+	.accordion-question{
+		font-family: 'Beatrice';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 150%;
+		color: #000000;
+	    max-width: 723px;
+		@media only screen and (max-width: 420px) {
+	  	    font-size: 18px;
+		}
+	}
+	
+	.accordion-answer{
+		font-family: 'Beatrice';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 190%;
+		color: #000000;
+	    margin-top: 25px;
+	    opacity: 0;
+  		transition: opacity 0.3s ease-out;
+	    @media only screen and (max-width: 420px) {
+	  	    font-size: 12px;
+		}
+	    ul,
+	    ol{
+	    	list-style: auto !important;
+	    	margin-left: 20px;
+    		margin-top: 10px;
+	    }
+	}
+	
+	.open {
+		.accordion-answer{
+		  	opacity: 1;
+  			animation: fadeIn 0.3s ease-in;
+	  	}
+	}
+
+	@keyframes fadeIn {
+	  0% {
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	  }
+	}
+
+	.icon-container {
+	  display: flex;
+	  align-items: center;
+	}
+
+	.plus-icon,
+	.minus-icon {
+	  	position: relative;
+	    height: 25px;
+	    width: 25px;
+	    right: 0px;
+	    top: 0px;
+	    padding: 0;
+	    background: transparent;
+	}
+
+	.plus-icon{
+		display: block;
+	}
+
+	.plus-icon:before {
+      	content: "";
+	    height: 25px;
+	    width: 1px;
+	    background: #000;
+	    transform: rotate(90deg);
+	    position: absolute;
+	    top: 0;
+	    right: 50%;
+	}
+
+	.plus-icon:after {
+	  	content: "";
+	    height: 25px;
+	    width: 1px;
+	    background: #000;
+	    transform: rotate(0deg);
+	    position: absolute;
+	    top: 0;
+	    right: 50%;
+	}
+
+	// .minus-icon {
+	// 	display: none;
+	// }
+	.minus-icon:before {
+	  	content: "";
+	  	position: absolute;
+	  	top: 50%;
+	  	left: 50%;
+	  	width: 25px;
+	  	height: 2px;
+	  	background-color: #FF1415;
+	  	transform: translate(-50%, -50%);
+	}
+}

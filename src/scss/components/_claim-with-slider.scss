@@ -1,0 +1,59 @@
+$ns: '.claim-with-slider';
+
+#{$ns} {
+	&__fact.is--visible {
+		@apply opacity-100 translate-y-0 delay-300;
+	}
+
+	&__final {
+		font-size: 10rem;
+		line-height: 1.1;
+		letter-spacing: -0.01em;
+		text-align: center;
+		transform: translateY(0.5em);
+		&.is--visible {
+			@apply opacity-100;
+			transform: translateY(0);
+		}
+		@screen md {
+			font-size: 20rem;
+		}
+	}
+
+	.gatsby-image-wrapper {
+		@apply mt-100 -ml-20;
+		@include aspect-ratio-media(310, 372);
+		@screen lg {
+			@include aspect-ratio-media(690, 520);
+		}
+	}
+
+	.generic-horizontal-scroll {
+		> .container {
+			@apply px-130 lg:px-30;
+		}
+
+		&__track > :last-of-type {
+			@screen lg {
+				flex: 0 0 100vw;
+			}
+			&.is--visible {
+				.generic-horizontal-scroll__title {
+					@apply opacity-0;
+				}
+				#{$ns}__final {
+					@apply opacity-100;
+				}
+			}
+		}
+
+		#{$ns}__final,
+		.generic-horizontal-scroll__title {
+			@apply transition duration-500;
+		}
+
+		&.is--last-slide .generic-horizontal-scroll__title {
+			opacity: 0;
+		}
+	}
+}

@@ -1,0 +1,101 @@
+$ns: '.custom-press';
+
+#{$ns} {
+	.wrap{
+		&.avelaup-press-builder{
+			background: #fff;
+			.avelaup-posts{
+				max-width: 1179px;
+				margin: auto;
+				padding: 45px 0;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, calc(100%/3));
+				grid-template-rows: repeat(2, auto);
+				@media only screen and (max-width: 960px) {
+				  grid-template-columns: repeat(auto-fit, calc(100%/2));
+				  padding: 45px 17px;
+				}
+				@media only screen and (max-width: 768px) {
+				  grid-template-columns: repeat(auto-fit, 100%);
+				  padding: 45px 0px;
+				}
+				.avelaup-post{
+					margin: 35px 17px;
+					.avelaup-post-featured{
+
+					}
+					.avelaup-post-title{
+						margin-top: 40px;
+						@media only screen and (max-width: 768px) {
+						  margin-top: 25px;
+						}
+						h4{
+							font-family: 'Beatrice';
+							font-weight: 300;
+							font-size: 24px;
+							line-height: 36px;
+							color: #000000;
+						}
+					}
+				}
+			}
+		}
+		&.avelaup-press-inquiries{
+			background: #fdf8f8;
+			.avelaup-inquiries{
+				.avelaup-press-inquiries-section{
+					text-align: center;
+					padding: 150px 0;
+					@media only screen and (max-width: 768px) {
+					  padding: 125px 0;
+					}
+					@media only screen and (max-width: 500px) {
+					  padding: 100px 0;
+					}
+					.avelaup-press-inquiries-title{
+						font-family: 'Beatrice';
+						font-weight: 300;
+						font-size: 52px;
+						color: #000000;
+						text-align: center;
+						@media only screen and (max-width: 500px) {
+						  font-size: 42px;
+						}
+					}
+					.rte.custom-press-sub-title{
+						p{
+							color: #000;
+							font-family: 'Beatrice';
+							font-size: 20px;
+							font-weight: 500;
+							line-height: 36px;
+							a{
+								text-decoration-line: underline;
+							}
+						}
+					}
+					a.cursor-pointer{
+						margin-top: 20px;
+						.layout-downloads{
+							svg{
+								display: inline-block;
+							}
+							.avelaup-press-inquiries-filename{
+								font-family: 'Beatrice';
+								font-weight: 500;
+								font-size: 20px;
+								text-decoration-line: underline;
+								color: #000000;
+								position: relative;
+								top: 5px;
+								left: 0;
+								margin-left: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
